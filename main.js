@@ -31,20 +31,33 @@ doSearch = input => {
 showPokemonInfo = obj => {
     // TODO: change information on page.
     console.log(obj);
-    let output= "";
+    let output = "";
     for (let i = 0; i < obj.abilities.length; i++) {
-        output += obj.abilities[i].ability.name + ", ";
-        output.charAt(0).toUpperCase();
+        output += `${obj.abilities[i].ability.name}, `;
     }
     output = output.replace(/,(?=[^,]*$)/, "");
+    let stats = "<ul>";
+    for (let i = 0; i < obj.stats.length; i++) {
+        stats += `<li>${obj.stats[i].stat.name}: ${obj.stats[i].base_stat}</li>`
+    }
+    stats += "</ul>";
+    let types = "";
+    for (let i = 0; i < obj.types.length; i++) {
+        types += `${obj.types[i].type.name}, `;
+    }
+    types = types.replace(/,(?=[^,]*$)/, "");
     document.getElementById("objInfo").innerHTML = 
     `
-        Name: ${obj.name} <br>
-        Abilities: ${output} <br>
+        <span class="label">Name</span>: ${obj.name} <br>
+        <span class="label">Abilities</span>: ${output} <br>
+        <span class="label">Types</span>: ${types}<br>
+        <span class="label">Stats</span>: <br>
+        ${stats}
     `;
     document.getElementById("objIMG").src = obj.sprites.other["official-artwork"].front_default;
     document.getElementById("content").style.display = "block";
     pokeInfo.style.display = "flex";
+    errMsg.style.display = "none";
 }
 
 displayErrorMessage = () => {
