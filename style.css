@@ -35,21 +35,58 @@ body {
 
 #errorMsg {
     display: none;
+    padding-top: 25px;
     color: var(--error-color);
-    font-size: 1em;
-    text-align: center;
-    margin: 0;
 }
 
 #content {
+    padding-bottom: 25px;
+    margin: 25px;
+}
+
+.content {
     background-color: rgb(50, 52, 65);
     overflow: hidden;
-    padding: 10px 25px;
     border: 1px solid black;
     border-radius: var(--border-size);
     color: var(--text-color);
-    margin: 25px;
-    height: 100%;
+}
+
+#pokeInfo {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+details {
+    padding: 15px 15px 0;
+    flex-basis: 100%;
+}
+
+details > summary {
+    background-color: rgb(41, 43, 54);
+    border: 1px solid black;
+    border-radius: var(--border-size) var(--border-size) 0 0;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.summaryText {
+    text-align: left !important;
+    text-transform: capitalize;
+}
+
+.summaryContent {
+    border-top-left-radius: 0 !important; 
+    border-top-right-radius: 0px !important; 
+    padding: 10px !important;
+}
+
+p {
+    font-size: 1em;
+    text-align: center;
+    margin: 0;
 }
 
 a {
@@ -81,3 +118,9 @@ button {
 button:hover {background-color: rgb(92, 169, 251);}
 
 button:active {background-color: rgb(36, 70, 107);}
+
+@media (min-width: 768px) {
+    details, .imgPlaceholder {
+        flex-basis: 47.5%;
+    }
+}

@@ -12,9 +12,19 @@
                 <input id="txtSearch" placeholder="Search for Pokemon"><button id="btnSearch">Search</button>
             </div>
         </div>
-        <div id="content">
+        <div class="content" id="content">
             <p id="errorMsg">Could not find any results. Please make sure the name is entered correctly.</p>
-            <div id="pokeInfo" style="display: block;"></div>
+            <div id="pokeInfo">
+                <div class = "imgPlaceholder">
+                    <img id="objIMG" width="256" height="256">
+                </div>
+                <details>
+                    <summary style="text-align: left !important; font-weight: bold;">Info</summary>
+                    <div class="content summaryContent">
+                        <p class="summaryText" id="objInfo">Placeholder</p>
+                    </div>
+                </details>
+            </div>
         </div>
         <script src="main.js"></script>
     </body>
