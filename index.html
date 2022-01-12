@@ -7,15 +7,14 @@
     <body>
         <div class="topbar">
             <h1 style="margin: 0;">Pokemon Search Tool</h1>
-            <span style="margin: 0; font-size: smaller; color: rgb(216, 216, 216) !important;">Using PokéAPI</span>
+            <span style="margin: 0; font-size: smaller; color: rgb(216, 216, 216) !important;">Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a></span>
             <div class="searchbar">
                 <input id="txtSearch" placeholder="Search for Pokemon"><button id="btnSearch">Search</button>
             </div>
         </div>
         <div id="content">
-            <div id="pokeInfo" style="display: block;">
-                <p>Abilities:</p>
-            </div>
+            <p id="errorMsg">Could not find any results. Please make sure the name is entered correctly.</p>
+            <div id="pokeInfo" style="display: block;"></div>
         </div>
         <script src="main.js"></script>
     </body>

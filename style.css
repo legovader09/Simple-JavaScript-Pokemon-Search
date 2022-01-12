@@ -1,5 +1,6 @@
 :root {
     --text-color: white;
+    --error-color: rgb(255, 87, 87);
     --border-size: 5px;
 }
 
@@ -32,6 +33,14 @@ body {
     outline: none;
 }
 
+#errorMsg {
+    display: none;
+    color: var(--error-color);
+    font-size: 1em;
+    text-align: center;
+    margin: 0;
+}
+
 #content {
     background-color: rgb(50, 52, 65);
     overflow: hidden;
@@ -41,6 +50,10 @@ body {
     color: var(--text-color);
     margin: 25px;
     height: 100%;
+}
+
+a {
+    color: rgb(34, 184, 184);
 }
 
 input {
