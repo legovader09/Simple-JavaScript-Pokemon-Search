@@ -14,6 +14,8 @@ checkParams = () => {
 }
 
 doSearch = input => {
+    url.searchParams.set("q", searchTxt.value);
+    window.history.replaceState(null, null, url);
     input = input.toLowerCase();
     if (!verifyText(input)) return displayErrorMessage();
     console.log("text verified");
@@ -72,10 +74,7 @@ verifyText = txt => {
 
 /// ON LOAD
 document.getElementById("btnSearch").addEventListener('click', function(){
-    errMsg.style.display = "none";
     doSearch(searchTxt.value);
-    url.searchParams.set("q", searchTxt.value);
-    window.history.replaceState(null, null, url);
 })
 
 searchTxt.addEventListener('keyup', (e) => e.key === 'Enter' && doSearch(searchTxt.value));
