@@ -5,14 +5,16 @@ const searchTxt = document.getElementById("txtSearch");
 /// FUNCTIONS
 checkParams = () => {
     const params = url.searchParams.get("q");
-    if (params) doSearch(params);
+    if (params) 
+    {
+        searchTxt.value = params;
+        doSearch(params);
+    }
 }
 
 doSearch = input => {
+    input = input.toLowerCase();
     if (!verifyText(input)) return displayErrorMessage();
-    url.searchParams.set("q", input);
-    window.history.replaceState(null, null, url);
-    searchTxt.value = input;
     console.log("text verified");
     fetch('https://pokeapi.co/api/v2/pokemon/' + input).then(response => {
         if (!response.ok)
@@ -38,6 +40,8 @@ verifyText = txt => {
 document.getElementById("btnSearch").addEventListener('click', function(){
     errMsg.style.display = "none";
     doSearch(searchTxt.value);
+    url.searchParams.set("q", searchTxt.value);
+    window.history.replaceState(null, null, url);
 })
 
 checkParams();
