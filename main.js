@@ -43,6 +43,8 @@ showPokemonInfo = obj => {
         Abilities: ${output} <br>
     `;
     document.getElementById("objIMG").src = obj.sprites.other["official-artwork"].front_default;
+    document.getElementById("content").style.display = "block";
+    pokeInfo.style.display = "flex";
 }
 
 displayErrorMessage = () => {
