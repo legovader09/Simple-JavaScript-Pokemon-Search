@@ -4,7 +4,7 @@ const pokeInfo = document.getElementById("pokeInfo");
 const searchTxt = document.getElementById("txtSearch");
 
 /// FUNCTIONS
-checkParams = () => {
+const checkParams = () => {
     const params = url.searchParams.get("q");
     if (params) 
     {
@@ -13,7 +13,7 @@ checkParams = () => {
     }
 }
 
-doSearch = input => {
+const doSearch = input => {
     url.searchParams.set("q", searchTxt.value);
     window.history.replaceState(null, null, url);
     input = input.toLowerCase();
@@ -30,7 +30,11 @@ doSearch = input => {
     });
 }
 
-showPokemonInfo = obj => {
+/**
+ * Displays the pokemon's information on the screen
+ * @param obj JSON object
+ */
+const showPokemonInfo = obj => {
     // TODO: change information on page.
     console.log(obj);
     let output = "";
@@ -62,12 +66,12 @@ showPokemonInfo = obj => {
     errMsg.style.display = "none";
 }
 
-displayErrorMessage = () => {
+const displayErrorMessage = () => {
     errMsg.style.display = "block";
     pokeInfo.style.display = "none";
 }
 
-verifyText = txt => {
+const verifyText = txt => {
     if (!txt) return false; //if empty 
     return (/^[a-zA-Z]*$/.test(txt) || /^\d+$/.test(txt))
 }
