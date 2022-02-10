@@ -1,2 +1,2 @@
-# JSAPITest
-Pokemon API Test
+# Pokemon API Test
+Pokemon API Search Tool
