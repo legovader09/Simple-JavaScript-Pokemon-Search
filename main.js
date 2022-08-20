@@ -14,7 +14,7 @@ const checkParams = () => {
 }
 
 const doSearch = input => {
-    url.searchParams.set("q", searchTxt.value);
+    url.searchParams.set("q", input);
     window.history.replaceState(null, null, url);
     input = input.toLowerCase();
     if (!verifyText(input)) return displayErrorMessage();
@@ -35,8 +35,6 @@ const doSearch = input => {
  * @param obj JSON object
  */
 const showPokemonInfo = obj => {
-    // TODO: change information on page.
-    console.log(obj);
     let output = "";
     for (let i = 0; i < obj.abilities.length; i++) {
         output += `${obj.abilities[i].ability.name}, `;
@@ -59,16 +57,19 @@ const showPokemonInfo = obj => {
         <span class="label">Types</span>: ${types}<br>
         <span class="label">Stats</span>: <br>
         ${stats}
+        <a id="prevPoke">Previous</a> | 
+        <a id="nextPoke">Next</a>
     `;
+    document.getElementById("nextPoke").addEventListener("click", () => {doSearch((obj.id + 1).toString())});
+    document.getElementById("prevPoke").addEventListener("click", () => {doSearch((obj.id - 1).toString())});
     document.getElementById("objIMG").src = obj.sprites.other["official-artwork"].front_default;
     document.getElementById("content").style.display = "block";
-    pokeInfo.style.display = "flex";
-    errMsg.style.display = "none";
+    displayErrorMessage(false);
 }
 
-const displayErrorMessage = () => {
-    errMsg.style.display = "block";
-    pokeInfo.style.display = "none";
+const displayErrorMessage = (enable) => {
+    errMsg.style.display = enable ? "block" : "none";
+    pokeInfo.style.display = enable ? "none" : "flex";
 }
 
 const verifyText = txt => {

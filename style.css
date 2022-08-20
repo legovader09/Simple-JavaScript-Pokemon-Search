@@ -114,6 +114,7 @@ p {
 a {
     color: rgb(34, 184, 184);
     text-decoration: none;
+    cursor: pointer;
 }
 
 ul {
