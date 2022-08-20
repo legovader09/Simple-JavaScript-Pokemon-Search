@@ -18,7 +18,6 @@ const doSearch = input => {
     window.history.replaceState(null, null, url);
     input = input.toLowerCase();
     if (!verifyText(input)) return displayErrorMessage();
-    console.log("text verified");
     fetch('https://pokeapi.co/api/v2/pokemon/' + input).then(response => {
         if (!response.ok) 
             throw new Error("response returned: " + response.status);
@@ -60,11 +59,16 @@ const showPokemonInfo = obj => {
         <a id="prevPoke">Previous</a> | 
         <a id="nextPoke">Next</a>
     `;
-    document.getElementById("nextPoke").addEventListener("click", () => {doSearch((obj.id + 1).toString())});
-    document.getElementById("prevPoke").addEventListener("click", () => {doSearch((obj.id - 1).toString())});
+    document.getElementById("nextPoke").addEventListener("click", () => {btnNextPokemon(obj.id + 1)});
+    document.getElementById("prevPoke").addEventListener("click", () => {btnNextPokemon(obj.id - 1)});
     document.getElementById("objIMG").src = obj.sprites.other["official-artwork"].front_default;
     document.getElementById("content").style.display = "block";
     displayErrorMessage(false);
+}
+
+const btnNextPokemon = (id) => {
+    doSearch((id).toString());
+    searchTxt.value = id;
 }
 
 const displayErrorMessage = (enable) => {

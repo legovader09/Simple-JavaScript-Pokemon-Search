@@ -39,7 +39,7 @@ p,
 }
 
 #objIMG {
-    margin: auto;
+    margin: 30px 75px;
 }
 
 #errorMsg {
@@ -61,7 +61,7 @@ p,
 #content {
     display: none;
     padding-bottom: 25px;
-    margin: 25px auto 0;
+    margin: 25px auto;
 }
 
 .content-base {
@@ -77,6 +77,10 @@ details {
     flex-basis: 100%;
 }
 
+details[open] > *:not(summary) {
+    animation: details-show 150ms ease-in-out;
+}
+
 details > summary {
     background-color: var(--color-dark);
     border: 1px solid black;
@@ -86,14 +90,14 @@ details > summary {
 }
 
 .summary-text {
-    text-align: left !important;
+    text-align: left;
     text-transform: capitalize;
 }
 
 .summary-content {
-    border-top-left-radius: 0 !important; 
-    border-top-right-radius: 0 !important; 
-    padding: 10px !important;
+    border-top-left-radius: 0; 
+    border-top-right-radius: 0; 
+    padding: 10px;
 }
 
 .label {
@@ -158,10 +162,16 @@ button:active {
 
 @media (min-width: 768px) {
     details, .imgPlaceholder {
-        flex-basis: 40%;
+        flex-basis: 45%;
     }
     #content {
-        width: 70vw;
-        max-width: 1200px;
+        max-width: 899px;
+    }
+}
+
+@keyframes details-show {
+    from {
+      opacity:0;
+      transform: var(--details-translate, translateY(-0.5em));
     }
 }
