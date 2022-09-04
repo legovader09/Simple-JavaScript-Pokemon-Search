@@ -6,8 +6,7 @@ const searchTxt = document.getElementById("txtSearch");
 /// FUNCTIONS
 const checkParams = () => {
     const params = url.searchParams.get("q");
-    if (params) 
-    {
+    if (params) {
         searchTxt.value = params;
         doSearch(params);
     }
@@ -19,13 +18,13 @@ const doSearch = input => {
     input = input.toLowerCase();
     if (!verifyText(input)) return displayErrorMessage();
     fetch('https://pokeapi.co/api/v2/pokemon/' + input).then(response => {
-        if (!response.ok) 
-            throw new Error("response returned: " + response.status);
-        else
+        if (response.ok) 
             response.json().then(json => showPokemonInfo(json));
+        else
+            throw new Error("response returned: " + response.status);
     }).catch(err => {
         console.error(err);
-        displayErrorMessage();
+        displayErrorMessage(true);
     });
 }
 
@@ -62,7 +61,6 @@ const showPokemonInfo = obj => {
     document.getElementById("nextPoke").addEventListener("click", () => {btnNextPokemon(obj.id + 1)});
     document.getElementById("prevPoke").addEventListener("click", () => {btnNextPokemon(obj.id - 1)});
     document.getElementById("objIMG").src = obj.sprites.other["official-artwork"].front_default;
-    document.getElementById("content").style.display = "block";
     displayErrorMessage(false);
 }
 
@@ -72,6 +70,7 @@ const btnNextPokemon = (id) => {
 }
 
 const displayErrorMessage = (enable) => {
+    document.getElementById("content").style.display = "block";
     errMsg.style.display = enable ? "block" : "none";
     pokeInfo.style.display = enable ? "none" : "flex";
 }
