@@ -1,177 +1,175 @@
 :root {
-    --text-color: white;
-    --error-color: rgb(255, 87, 87);
-    --color-dark: rgb(41, 43, 54);
-    --border-size: 5px;
+  --text-color: white;
+  --error-color: rgb(255, 87, 87);
+  --color-dark: rgb(41, 43, 54);
+  --border-size: 5px;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--color-dark);
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-dark);
 }
 
 p,
 .topbar,
 .searchbar > *,
 #pokeInfo {
-    text-align: center;
+  text-align: center;
 }
 
 .topbar {
-    background-color: rgb(59, 62, 78);
-    overflow: hidden;
-    padding: 14px 16px;
-    color: var(--text-color);
-    border-bottom: 2px solid rgb(37, 38, 46);
+  background-color: rgb(59, 62, 78);
+  overflow: hidden;
+  padding: 14px 16px;
+  color: var(--text-color);
+  border-bottom: 2px solid rgb(37, 38, 46);
 }
 
 .searchbar {
-    margin-top: 10px;
-    height: 40px;
+  margin-top: 10px;
+  height: 40px;
 }
 
 .searchbar > * {
-    border-color: black;
-    height: 100%;
-    font-size: large;
-    outline: none;
+  border-color: black;
+  height: 100%;
+  font-size: large;
+  outline: none;
 }
 
 #objIMG {
-    margin: 30px 75px;
+  margin: 30px 75px;
 }
 
 #errorMsg {
-    display: none;
-    padding-top: 25px;
-    color: var(--error-color);
+  display: none;
+  padding-top: 25px;
+  color: var(--error-color);
 }
 
 #pokeInfo {
-    justify-content: center;
-    flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #pokeInfo,
 .imgPlaceholder {
-    display: flex;
+  display: flex;
 }
 
 #content {
-    display: none;
-    padding-bottom: 25px;
-    margin: 25px auto;
+  display: none;
+  padding-bottom: 25px;
+  margin: 25px auto;
 }
 
 .content-base {
-    background-color: rgb(50, 52, 65);
-    overflow: hidden;
-    border: 1px solid black;
-    border-radius: var(--border-size);
-    color: var(--text-color);
+  background-color: rgb(50, 52, 65);
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: var(--border-size);
+  color: var(--text-color);
 }
 
 details {
-    padding: 15px 15px 0;
-    flex-basis: 100%;
+  padding: 15px 15px 0;
+  flex-basis: 100%;
 }
 
 details[open] > *:not(summary) {
-    animation: details-show 150ms ease-in-out;
+  animation: details-show 150ms ease-in-out;
 }
 
 details > summary {
-    background-color: var(--color-dark);
-    border: 1px solid black;
-    border-radius: var(--border-size) var(--border-size) 0 0;
-    padding: 4px;
-    cursor: pointer;
+  background-color: var(--color-dark);
+  border: 1px solid black;
+  border-radius: var(--border-size) var(--border-size) 0 0;
+  padding: 4px;
+  cursor: pointer;
 }
 
 .summary-text {
-    text-align: left;
-    text-transform: capitalize;
+  text-align: left;
+  text-transform: capitalize;
 }
 
 .summary-content {
-    border-top-left-radius: 0; 
-    border-top-right-radius: 0; 
-    padding: 10px;
+  border-top-left-radius: 0; 
+  border-top-right-radius: 0; 
+  padding: 10px;
 }
 
 .label {
-    font-weight: bold;
-    margin-bottom: 0.25rem;
-    display: inline-block;
+  font-weight: bold;
 }
 
 p,
 ul {
-    margin: 0;
+  margin: 0;
 }
 
 p {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 a {
-    color: rgb(34, 184, 184);
-    text-decoration: none;
-    cursor: pointer;
+  color: rgb(34, 184, 184);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 ul {
-    list-style-position: inside;
-    padding-left: 0;
+  list-style-position: inside;
+  padding-left: 0;
 }
 
 li {
-    margin-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 input {
-    width: 60vw;
-    background-color: var(--color-dark);
-    border-right: 0px;
-    border-top-left-radius: var(--border-size);
-    border-bottom-left-radius: var(--border-size);
-    color: var(--text-color);
-    padding-left: 10px;
+  width: 60vw;
+  background-color: var(--color-dark);
+  border-right: 0px;
+  border-top-left-radius: var(--border-size);
+  border-bottom-left-radius: var(--border-size);
+  color: var(--text-color);
+  padding-left: 10px;
 }
 
 input:hover {
-    background-color: rgb(52, 54, 66);
+  background-color: rgb(52, 54, 66);
 }
 
 button {
-    background-color: rgb(47, 115, 188);
-    border-left: 0px;
-    border-top-right-radius: var(--border-size);
-    border-bottom-right-radius: var(--border-size);
-    color: var(--text-color);
+  background-color: rgb(47, 115, 188);
+  border-left: 0px;
+  border-top-right-radius: var(--border-size);
+  border-bottom-right-radius: var(--border-size);
+  color: var(--text-color);
 }
 
 button:hover {
-    background-color: rgb(92, 169, 251);
+  background-color: rgb(92, 169, 251);
 }
 
 button:active {
-    background-color: rgb(36, 70, 107);
+  background-color: rgb(36, 70, 107);
 }
 
 @media (min-width: 768px) {
-    details, .imgPlaceholder {
-        flex-basis: 45%;
-    }
-    #content {
-        max-width: 899px;
-    }
+  details, .imgPlaceholder {
+    flex-basis: 45%;
+  }
+  #content {
+    max-width: 899px;
+  }
 }
 
 @keyframes details-show {
-    from {
-      opacity:0;
-      transform: var(--details-translate, translateY(-0.5em));
-    }
+  from {
+    opacity:0;
+    transform: var(--details-translate, translateY(-0.5em));
+  }
 }

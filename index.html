@@ -1,31 +1,31 @@
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Pokemon Search Tool | Dominik Hauerstein</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="topbar">
-            <h1 style="margin: 0;">Pokemon Search Tool</h1>
-            <span style="margin: 0; font-size: smaller; color: rgb(216, 216, 216) !important;">Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a></span>
-            <div class="searchbar">
-                <input id="txtSearch" placeholder="Search for Pokemon"><button id="btnSearch">Search</button>
-            </div>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pokemon Search Tool | Dominik Hauerstein</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="topbar">
+      <h1 style="margin: 0;">Pokemon Search Tool</h1>
+      <span style="margin: 0; font-size: smaller; color: rgb(216, 216, 216) !important;">Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a></span>
+      <div class="searchbar">
+        <input id="txtSearch" placeholder="Search for Pokemon"><button id="btnSearch">Search</button>
+      </div>
+    </div>
+    <div class="content-base" id="content">
+      <p id="errorMsg">Could not find any results. Please make sure the name is entered correctly.</p>
+      <div id="pokeInfo">
+        <div class="imgPlaceholder">
+          <img id="objIMG" width="256" height="256">
         </div>
-        <div class="content-base" id="content">
-            <p id="errorMsg">Could not find any results. Please make sure the name is entered correctly.</p>
-            <div id="pokeInfo">
-                <div class = "imgPlaceholder">
-                    <img id="objIMG" width="256" height="256">
-                </div>
-                <details open>
-                    <summary style="text-align: left !important; font-weight: bold;">Info</summary>
-                    <div class="content-base summary-content">
-                        <p class="summary-text" id="objInfo">Placeholder</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-        <script src="main.js"></script>
-    </body>
+        <details open>
+          <summary style="text-align: left !important; font-weight: bold;">Info</summary>
+          <div class="content-base summary-content">
+            <p class="summary-text" id="objInfo">Placeholder</p>
+          </div>
+        </details>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
