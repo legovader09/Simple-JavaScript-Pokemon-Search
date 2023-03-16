@@ -7,9 +7,11 @@
   <body>
     <div class="topbar">
       <h1 style="margin: 0;">Pokemon Search Tool</h1>
-      <span style="margin: 0; font-size: smaller; color: rgb(216, 216, 216) !important;">Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a></span>
+      <span style="margin: 0; font-size: smaller; color: #d8d8d8;">Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a></span>
       <div class="searchbar">
-        <input id="txtSearch" placeholder="Search for Pokemon"><button id="btnSearch">Search</button>
+        <input id="txtSearch" placeholder="Search for Pokemon">
+        <button id="btnSearch">Search</button>
+        <span style="padding-left: 1rem;"><a id="btnRandom">I'm feeling lucky</a></span>
       </div>
     </div>
     <div class="content-base" id="content">
@@ -19,7 +21,7 @@
           <img id="objIMG" width="256" height="256">
         </div>
         <details open>
-          <summary style="text-align: left !important; font-weight: bold;">Info</summary>
+          <summary style="text-align: left; font-weight: bold;">Info</summary>
           <div class="content-base summary-content">
             <p class="summary-text" id="objInfo">Placeholder</p>
           </div>
