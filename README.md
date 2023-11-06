@@ -1,2 +1,2 @@
-# Pokemon API Test
-Pokemon API Search Tool
+# Simple JavaScript Pokémon Search
+Using PokéApi for the API requests.
